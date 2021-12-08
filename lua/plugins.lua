@@ -12,16 +12,6 @@ return require('packer').startup(function(use)
 
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
-    use  { 
-        'hrsh7th/nvim-cmp',
-        requires = { { 'hrsh7th/cmp-nvim-lsp' } }
-    }
-
-    use {
-        'ms-jpq/coq_nvim',
-        branch = 'coq',
-        requires = {'ms-jpq/coq.artifacts', branch = 'artifacts'}
-    }
 
     use {
         'nvim-telescope/telescope.nvim',
@@ -45,5 +35,15 @@ return require('packer').startup(function(use)
             -- you can configure Hop the way you like here; see :h hop-config
             require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
         end
+    }
+
+    use {
+        "hrsh7th/nvim-cmp",
+        requires = {
+            "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp",
+            'quangnguyen30192/cmp-nvim-ultisnips', 'hrsh7th/cmp-nvim-lua',
+            'octaltree/cmp-look', 'hrsh7th/cmp-path', 'hrsh7th/cmp-calc',
+            'f3fora/cmp-spell', 'hrsh7th/cmp-emoji', 'onsails/lspkind-nvim'
+        }
     }
 end)
