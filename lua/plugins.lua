@@ -38,6 +38,18 @@ return require('packer').startup(function(use)
     }
 
     use {
+        'nvim-treesitter/nvim-treesitter',
+        config = 'vim.cmd[[TSUpdate]]'
+    }
+    use 'nvim-treesitter/nvim-treesitter-refactor'
+
+    -- theme
+    use({
+        "catppuccin/nvim",
+        as = "catppuccin"
+    })
+
+    use {
         "hrsh7th/nvim-cmp",
         requires = {
             "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp",

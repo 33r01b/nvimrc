@@ -135,7 +135,7 @@ for _, l in ipairs(servers) do
 end
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menu,menuone,noselect'
+-- vim.o.completeopt = 'menu,menuone,noselect'
 
 -- if not configs.plaintext_lsp then
 --     configs.plaintext_lsp = {
