@@ -6,3 +6,7 @@ lua require('treesitter')
 source ~/.config/nvim/config/main.vim
 
 colorscheme catppuccin
+
+lua << EOF
+vim.lsp.set_log_level("debug")
+EOF

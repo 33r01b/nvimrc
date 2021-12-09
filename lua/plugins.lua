@@ -15,7 +15,7 @@ return require('packer').startup(function(use)
 
     use {
         'nvim-telescope/telescope.nvim',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = {'nvim-lua/plenary.nvim'}
     }
 
     use {
@@ -42,20 +42,21 @@ return require('packer').startup(function(use)
         config = 'vim.cmd[[TSUpdate]]'
     }
     use 'nvim-treesitter/nvim-treesitter-refactor'
+    use 'windwp/nvim-autopairs'
+
+    use {
+        'ms-jpq/coq_nvim',
+        branch = 'coq',
+        requires = {
+            {'ms-jpq/coq.artifacts', branch = 'artifacts'}
+        }
+    }
+
+    use 'rcjsuen/dockerfile-language-server-nodejs'
 
     -- theme
     use({
         "catppuccin/nvim",
         as = "catppuccin"
     })
-
-    use {
-        "hrsh7th/nvim-cmp",
-        requires = {
-            "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp",
-            'quangnguyen30192/cmp-nvim-ultisnips', 'hrsh7th/cmp-nvim-lua',
-            'octaltree/cmp-look', 'hrsh7th/cmp-path', 'hrsh7th/cmp-calc',
-            'f3fora/cmp-spell', 'hrsh7th/cmp-emoji', 'onsails/lspkind-nvim'
-        }
-    }
 end)
