@@ -54,6 +54,8 @@ return require('packer').startup(function(use)
 
     use 'rcjsuen/dockerfile-language-server-nodejs'
 
+    use 'kyazdani42/nvim-tree.lua'
+
     -- theme
     use({
         "catppuccin/nvim",

@@ -45,3 +45,13 @@ nnoremap S <cmd>HopPattern<cr>
 nnoremap s <cmd>HopChar1<cr>
 
 " nnoremap <leader><Tab> <cmd>TODO file browser<cr>
+
+" NvimTree
+nnoremap <C-n> :NvimTreeToggle<CR>
+nnoremap <leader>r :NvimTreeRefresh<CR>
+nnoremap <leader>n :NvimTreeFindFile<CR>
+" NvimTreeOpen, NvimTreeClose, NvimTreeFocus, NvimTreeFindFileToggle, and NvimTreeResize are also available if you need them
+
+
+" 🐓 Coq
+let g:coq_settings = { "keymap.jump_to_mark": "\<C-m>" }

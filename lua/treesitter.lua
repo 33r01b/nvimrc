@@ -5,3 +5,5 @@ require'nvim-treesitter.configs'.setup {
 }
 
 require('nvim-autopairs').setup{}
+
+require('nvim-tree').setup{}
