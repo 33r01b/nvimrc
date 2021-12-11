@@ -16,6 +16,25 @@ return require('packer').startup(function(use)
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
 
+    -- docker lsp server
+    use 'rcjsuen/dockerfile-language-server-nodejs'
+    
+    -- completion
+    use {
+        "hrsh7th/nvim-cmp",
+        requires = {
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-nvim-lsp",
+            'f3fora/cmp-spell',
+            'hrsh7th/cmp-calc',
+            'hrsh7th/cmp-nvim-lua',
+            'hrsh7th/cmp-path',
+            'hrsh7th/cmp-vsnip',
+            'hrsh7th/vim-vsnip',
+            'octaltree/cmp-look',
+        }
+    }
+
     -- fuzzy finder
     use {
         'nvim-telescope/telescope.nvim',
@@ -49,24 +68,6 @@ return require('packer').startup(function(use)
         run = ':TSUpdate'
     }
     use 'nvim-treesitter/nvim-treesitter-refactor'
-    
-    -- completion
-    use {
-        "hrsh7th/nvim-cmp",
-        requires = {
-            "hrsh7th/cmp-buffer",
-            "hrsh7th/cmp-nvim-lsp",
-            'f3fora/cmp-spell',
-            'hrsh7th/cmp-calc',
-            'hrsh7th/cmp-nvim-lua',
-            'hrsh7th/cmp-path',
-            'hrsh7th/cmp-vsnip',
-            'hrsh7th/vim-vsnip',
-            'octaltree/cmp-look',
-        }
-    }
-
-    use 'rcjsuen/dockerfile-language-server-nodejs'
 
     -- filebrowser
     use 'kyazdani42/nvim-tree.lua'

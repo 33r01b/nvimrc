@@ -8,7 +8,7 @@ nnoremap <silent> <Leader>c :nohl<Bar>:echo<CR>
 
 " tab
 nnoremap <C-T> :tabnew<CR>
-nnoremap <Tab> :tabprevious<CR>
+" nnoremap <Tab> :tabprevious<CR>
 nnoremap <S-Tab> :tabnext<CR>
 nnoremap <silent> <C-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <C-Right> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
@@ -25,8 +25,10 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 
+noremap <leader>j J
+
 " show new lines
-nmap <leader>l :set list!<CR>
+nmap <silent> <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
 " disable ZZ exit
@@ -41,17 +43,17 @@ nnoremap <leader>f <cmd>Telescope live_grep<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " hop
-nnoremap S <cmd>HopPattern<cr>
-nnoremap s <cmd>HopChar1<cr>
+nnoremap <silent> S <cmd>HopPattern<cr>
+nnoremap <silent> s <cmd>HopChar1<cr>
 
 " nnoremap <leader><Tab> <cmd>TODO file browser<cr>
 
 " NvimTree
-nnoremap <C-n> :NvimTreeToggle<CR>
-nnoremap <C-o> :NvimTreeFindFile<CR>
+nnoremap <silent> <C-n> :NvimTreeToggle<CR>
+nnoremap <silent> <C-o> :NvimTreeFindFile<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
 " NvimTreeOpen, NvimTreeClose, NvimTreeFocus, NvimTreeFindFileToggle, and NvimTreeResize are also available if you need them
 
 " vim-floaterm
-nnoremap <leader>t :FloatermNew<CR>
-nnoremap <leader>T :FloatermNew! cd %:p:h<CR>
+nnoremap <silent> <leader>t :FloatermNew<CR>
+nnoremap <silent> <leader>T :FloatermNew! cd %:p:h<CR>
