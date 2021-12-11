@@ -1,6 +1,10 @@
 PHP
 
+    php 
     npm i intelephense -g
+
+GO
+    gopls
 
 Search
 
