@@ -38,15 +38,15 @@ local coq = require 'coq'
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local servers = { 'gopls' }
 
-for _, l in ipairs(servers) do
-    lsp[l].setup(coq.lsp_ensure_capabilities({
-        on_attach = on_attach,
-        flags = {
-            debounce_text_changes = 150,
-        },
-        capabilities = capabilities
-    }))
-end
+-- for _, l in ipairs(servers) do
+--     lsp[l].setup(coq.lsp_ensure_capabilities({
+--         on_attach = on_attach,
+--         flags = {
+--             debounce_text_changes = 150,
+--         },
+--         capabilities = capabilities
+--     }))
+-- end
 
 lsp.intelephense.setup(coq.lsp_ensure_capabilities({
     init_options = {
@@ -60,7 +60,7 @@ lsp.intelephense.setup(coq.lsp_ensure_capabilities({
     settings = {
         intelephense = {
             files = {
-                maxSize = 10000000;
+                maxSize = 5000000;
             },
             environment = {
                 phpVersion = '8.0'
@@ -70,6 +70,23 @@ lsp.intelephense.setup(coq.lsp_ensure_capabilities({
 }))
 
 vim.cmd('COQnow -s')
+
+lsp.gopls.setup(coq.lsp_ensure_capabilities({
+    cmd = {"gopls", "serve"},
+    settings = {
+        gopls = {
+            analyses = {
+                unusedparams = true,
+            },
+            staticcheck = true,
+        },
+    },
+    on_attach = on_attach,
+    flags = {
+        debounce_text_changes = 150,
+    },
+    capabilities = capabilities
+}))
 
 -- Set completeopt to have a better completion experience
 -- vim.o.completeopt = 'menu,menuone,noselect'

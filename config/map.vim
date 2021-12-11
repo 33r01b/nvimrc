@@ -54,4 +54,4 @@ nnoremap <leader>n :NvimTreeFindFile<CR>
 
 
 " 🐓 Coq
-let g:coq_settings = { "keymap.jump_to_mark": "\<C-m>" }
+let g:coq_settings = { "keymap.jump_to_mark": "\<C-m><Esc>" }
