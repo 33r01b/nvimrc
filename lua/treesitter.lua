@@ -4,6 +4,11 @@ require'nvim-treesitter.configs'.setup {
     },
 }
 
--- require('nvim-autopairs').setup{}
-
 require('nvim-tree').setup{}
+
+require'lualine'.setup{
+    options = {
+        section_separators = '',
+        component_separators = ''
+    }
+}

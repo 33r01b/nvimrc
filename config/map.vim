@@ -48,9 +48,10 @@ nnoremap s <cmd>HopChar1<cr>
 
 " NvimTree
 nnoremap <C-n> :NvimTreeToggle<CR>
+nnoremap <C-o> :NvimTreeFindFile<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
-nnoremap <leader>n :NvimTreeFindFile<CR>
 " NvimTreeOpen, NvimTreeClose, NvimTreeFocus, NvimTreeFindFileToggle, and NvimTreeResize are also available if you need them
 
 " vim-floaterm
-nnoremap <leader>t :FloatermNew --autoclose=2<CR>
+nnoremap <leader>t :FloatermNew<CR>
+nnoremap <leader>T :FloatermNew! cd %:p:h<CR>
