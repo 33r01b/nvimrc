@@ -1,7 +1,6 @@
 PHP
 
     npm i intelephense -g
-    :COQdeps
 
 Search
 

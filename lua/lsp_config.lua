@@ -34,44 +34,62 @@ local on_attach = function(client, bufnr)
 
 end
 
-local coq = require 'coq'
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-local servers = { 'gopls' }
+local cmp = require'cmp'
 
--- for _, l in ipairs(servers) do
---     lsp[l].setup(coq.lsp_ensure_capabilities({
---         on_attach = on_attach,
---         flags = {
---             debounce_text_changes = 150,
---         },
---         capabilities = capabilities
---     }))
--- end
-
-lsp.intelephense.setup(coq.lsp_ensure_capabilities({
-    init_options = {
-        cacheClear = true
+cmp.setup({
+    snippet = {
+        -- REQUIRED - you must specify a snippet engine
+        expand = function(args)
+            vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+            -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+            -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+            -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
+        end,
     },
-    on_attach = on_attach,
-    flags = {
-        debounce_text_changes = 150,
+    mapping = {
+        ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+        ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+        ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+        ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if yo want to remove the default `<C-y>` mapping.
+        ['<C-e>'] = cmp.mapping({
+            i = cmp.mapping.abort(),
+            c = cmp.mapping.close(),
+        }),
+        -- Accept currently selected item. If none selected, `select` first item.
+        -- Set `select` to `false` to only confirm explicitly selected items.
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
     },
-    capabilities = capabilities,
-    settings = {
-        intelephense = {
-            files = {
-                maxSize = 5000000;
-            },
-            environment = {
-                phpVersion = '8.0'
-            }
-        }
-    }
-}))
+    sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        { name = 'vsnip' }, -- For vsnip users.
+        -- { name = 'luasnip' }, -- For luasnip users.
+        -- { name = 'ultisnips' }, -- For ultisnips users.
+        -- { name = 'snippy' }, -- For snippy users.
+    }, {
+        { name = 'buffer' },
+    })
+})
 
-vim.cmd('COQnow -s')
+-- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+-- cmp.setup.cmdline('/', {
+--     sources = {
+--         { name = 'buffer' }
+--     }
+-- })
 
-lsp.gopls.setup(coq.lsp_ensure_capabilities({
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+-- cmp.setup.cmdline(':', {
+--     sources = cmp.config.sources({
+--         { name = 'path' }
+--     }, {
+--         { name = 'cmdline' }
+--     })
+-- })
+
+-- Setup lspconfig.
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+lsp.gopls.setup({
     cmd = {"gopls", "serve"},
     settings = {
         gopls = {
@@ -86,7 +104,28 @@ lsp.gopls.setup(coq.lsp_ensure_capabilities({
         debounce_text_changes = 150,
     },
     capabilities = capabilities
-}))
+})
+
+lsp.intelephense.setup({
+    init_options = {
+        cacheClear = true
+    },
+    on_attach = on_attach,
+    flags = {
+        debounce_text_changes = 150,
+    },
+    capabilities = capabilities,
+    settings = {
+        intelephense = {
+            files = {
+                maxSize = 10000000;
+            },
+            environment = {
+                phpVersion = '8.0'
+            }
+        }
+    }
+})
 
 -- Set completeopt to have a better completion experience
 -- vim.o.completeopt = 'menu,menuone,noselect'

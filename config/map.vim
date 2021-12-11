@@ -52,6 +52,5 @@ nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
 " NvimTreeOpen, NvimTreeClose, NvimTreeFocus, NvimTreeFindFileToggle, and NvimTreeResize are also available if you need them
 
-
-" 🐓 Coq
-let g:coq_settings = { "keymap.jump_to_mark": "\<C-m><Esc>" }
+" vim-floaterm
+nnoremap <leader>t :FloatermNew --autoclose=2<CR>

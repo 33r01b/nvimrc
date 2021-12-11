@@ -8,7 +8,8 @@ source ~/.config/nvim/config/main.vim
 colorscheme catppuccin
 set termguicolors " this variable must be enabled for colors to be applied properly
 
+set completeopt=menu,menuone,noselect
 
-" lua << EOF
-" vim.lsp.set_log_level("debug")
-" EOF
+lua << EOF
+vim.lsp.set_log_level("debug")
+EOF
