@@ -24,3 +24,8 @@ set completeopt=menu,menuone,noselect
 lua << EOF
 vim.lsp.set_log_level("debug")
 EOF
+
+lua << EOF
+vim.opt.spell = true
+vim.opt.spelllang = { 'en_us', 'ru_ru' }
+EOF

@@ -5,7 +5,6 @@ filetype plugin indent on
 autocmd FileType make setlocal noexpandtab
 
 "set relativenumber
-"set spell
 "set wildmenu
 "set wildmode=list:longest,list:full
  
@@ -37,7 +36,10 @@ set laststatus=2
 set lazyredraw
 set mousehide
 set nocp
-set nospell
+" set nospell
+set spelllang=en,ru
+set spell
+set spellsuggest=best,9
 set number
 set path+=**
 set re=1
@@ -51,7 +53,6 @@ set smartcase
 set smartindent
 set smarttab
 set softtabstop=4
-set spelllang=en,ru
 set splitbelow
 set splitright
 set ssop-=folds " do not store folds

@@ -59,15 +59,19 @@ cmp.setup({
         -- Set `select` to `false` to only confirm explicitly selected items.
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
     },
-    sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        { name = 'vsnip' }, -- For vsnip users.
-        -- { name = 'luasnip' }, -- For luasnip users.
-        -- { name = 'ultisnips' }, -- For ultisnips users.
-        -- { name = 'snippy' }, -- For snippy users.
-    }, {
-        { name = 'buffer' },
-    })
+    sources = cmp.config.sources(
+        {
+            { name = 'nvim_lsp' },
+            { name = 'vsnip' }, -- For vsnip users.
+            -- { name = 'luasnip' }, -- For luasnip users.
+            -- { name = 'ultisnips' }, -- For ultisnips users.
+            -- { name = 'snippy' }, -- For snippy users.
+        },
+        {
+            { name = 'buffer' },
+            { name = 'spell' },
+        }
+    )
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
@@ -93,8 +97,10 @@ lsp.gopls.setup({
     cmd = {"gopls", "serve"},
     settings = {
         gopls = {
+            experimentalPostfixCompletions = true,
             analyses = {
                 unusedparams = true,
+                shadow = true,
             },
             staticcheck = true,
         },
