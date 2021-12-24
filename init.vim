@@ -2,6 +2,7 @@
 let g:floaterm_autoclose=2
 
 " nvim_tree
+let g:nvim_tree_git_hl = 1
 let g:nvim_tree_show_icons = {
     \ 'git': 1,
     \ 'folders': 1,
@@ -29,3 +30,4 @@ lua << EOF
 vim.opt.spell = true
 vim.opt.spelllang = { 'en_us', 'ru_ru' }
 EOF
+
