@@ -31,3 +31,5 @@ vim.opt.spell = true
 vim.opt.spelllang = { 'en_us', 'ru_ru' }
 EOF
 
+
+hi ColorColumn guibg=#332E41
