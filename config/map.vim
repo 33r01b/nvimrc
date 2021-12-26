@@ -6,6 +6,7 @@ inoremap <C-c> <Esc>
 " search
 nnoremap <silent> <Leader>c :nohl<Bar>:echo<CR>
 
+
 " tab - dont use it
 " nnoremap <C-T> :tabnew<CR>
 " nnoremap <Tab> :tabprevious<CR>
@@ -41,8 +42,9 @@ nnoremap <silent> <Tab> :e#<CR>
 
 " telescope
 nnoremap ; <cmd>Telescope find_files<cr>
-nnoremap § <cmd>Telescope buffers<cr>
+nnoremap ` <cmd>Telescope buffers<cr>
 nnoremap <leader>f <cmd>Telescope live_grep<cr>
+vnoremap <leader>f "zy:Telescope live_grep default_text=<C-r>z<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " hop
