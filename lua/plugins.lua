@@ -89,4 +89,7 @@ return require('packer').startup(function(use)
 
     -- markdown preview
     use {"ellisonleao/glow.nvim"}
+
+    -- ASCII diagrams
+    use "jbyuki/venn.nvim"
 end)
