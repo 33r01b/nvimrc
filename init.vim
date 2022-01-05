@@ -1,5 +1,6 @@
 " vim-floaterm
 let g:floaterm_autoclose=2
+hi ColorColumn guibg=#332E41
 
 " nvim_tree
 let g:nvim_tree_git_hl = 1
@@ -25,11 +26,5 @@ set completeopt=menu,menuone,noselect
 lua << EOF
 vim.lsp.set_log_level("debug")
 EOF
-
-lua << EOF
-vim.opt.spell = true
-vim.opt.spelllang = { 'en_us', 'ru_ru' }
-EOF
-
 
 hi ColorColumn guibg=#332E41

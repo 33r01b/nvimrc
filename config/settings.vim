@@ -36,9 +36,9 @@ set laststatus=2
 set lazyredraw
 set mousehide
 set nocp
-" set nospell
+set nospell
 set spelllang=en,ru
-set spell
+"set spell
 set spellsuggest=best,9
 set number
 set path+=**

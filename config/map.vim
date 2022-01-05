@@ -62,3 +62,6 @@ nnoremap <leader>r :NvimTreeRefresh<CR>
 " vim-floaterm
 nnoremap <silent> <leader>t :FloatermNew<CR>
 nnoremap <silent> <leader>T :FloatermNew! cd %:p:h<CR>
+
+" spell
+map <F8> :setlocal spell! spelllang=en,ru<CR>
