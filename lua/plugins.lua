@@ -29,9 +29,19 @@ return require('packer').startup(function(use)
             'hrsh7th/cmp-calc',
             'hrsh7th/cmp-nvim-lua',
             'hrsh7th/cmp-path',
-            'hrsh7th/cmp-vsnip',
-            'hrsh7th/vim-vsnip',
             'octaltree/cmp-look',
+        }
+    }
+
+    use {
+        'hrsh7th/cmp-vsnip',
+        after = 'nvim-cmp',
+        requires = {
+            'hrsh7th/vim-vsnip',
+            {
+                'rafamadriz/friendly-snippets',
+                after = 'cmp-vsnip'
+            }
         }
     }
 
