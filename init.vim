@@ -28,3 +28,6 @@ vim.lsp.set_log_level("debug")
 EOF
 
 hi ColorColumn guibg=#332E41
+
+" run gofmt on save
+autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
