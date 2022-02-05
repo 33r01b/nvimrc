@@ -1,6 +1,5 @@
 " vim-floaterm
 let g:floaterm_autoclose=2
-hi ColorColumn guibg=#332E41
 
 " nvim_tree
 let g:nvim_tree_git_hl = 1
@@ -27,7 +26,16 @@ lua << EOF
 vim.lsp.set_log_level("debug")
 EOF
 
-hi ColorColumn guibg=#332E41
+"hi ColorColumn guibg=#332E41
+"hi ColorColumn guibg=#332E41
+"hi NvimTreeVertSplit guibg=#332E41
+hi ColorColumn guibg=#242424
+hi CursorLine guibg=#242424
+hi NvimTreeVertSplit guibg=#242424
+hi NvimTreeNormal guibg=none
+hi lualine_c_normal guibg=none
+hi lualine_c_normal guibg=#242424
+
 
 " run gofmt on save
 autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
