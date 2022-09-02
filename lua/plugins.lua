@@ -7,7 +7,10 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- closes brackets
-    use '9mm/vim-closer'
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
 
     -- comments
     use 'tpope/vim-commentary'
