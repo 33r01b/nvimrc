@@ -41,15 +41,11 @@ nnoremap ZZ <Nop>
 nnoremap <silent> <Tab> :e#<CR>
 
 " telescope
-nnoremap ; <cmd>Telescope find_files<cr>
+nnoremap ; <cmd>Telescope find_files find_command=rg,--no-ignore,--hidden,--files,--glob=!.git/<cr>
 nnoremap ` <cmd>Telescope buffers<cr>
 nnoremap <leader>f <cmd>Telescope live_grep<cr>
 vnoremap <leader>f "zy:Telescope live_grep default_text=<C-r>z<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
-" hop
-nnoremap <silent> S <cmd>HopPattern<cr>
-nnoremap <silent> s <cmd>HopChar1<cr>
 
 " nnoremap <leader><Tab> <cmd>TODO file browser<cr>
 

@@ -29,6 +29,11 @@ require('nvim-tree').setup{
              folder_arrow = true,
             }
         }
+    },
+    actions = {
+        open_file = {
+            resize_window = true
+        }
     }
 }
 
@@ -70,3 +75,14 @@ catppuccin.setup({
     transparent_background = true,
     term_colors = true,
 })
+
+-- telescope
+require("telescope").setup { 
+    pickers = {
+        live_grep = {
+            additional_args = function(opts)
+                return {"--hidden", "--no-ignore", "--glob=!.git/"}
+            end
+        },
+    },
+}

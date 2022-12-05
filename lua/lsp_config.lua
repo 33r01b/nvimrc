@@ -101,7 +101,7 @@ lsp_installer.on_server_ready(function(server)
                     maxSize = 10000000;
                 },
                 environment = {
-                    phpVersion = '8.0'
+                    phpVersion = '8.1'
                 }
             }
         }
