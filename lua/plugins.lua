@@ -98,4 +98,7 @@ return require('packer').startup(function(use)
 
     -- ASCII diagrams
     use "jbyuki/venn.nvim"
+
+    -- Cmake
+    use 'cdelledonne/vim-cmake'
 end)
