@@ -47,6 +47,12 @@ nnoremap <leader>f <cmd>Telescope live_grep<cr>
 vnoremap <leader>f "zy:Telescope live_grep default_text=<C-r>z<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+" LSP + telescope
+nnoremap <silent> gr :lua require'telescope.builtin'.lsp_references{}<cr>
+nnoremap <silent> gi :lua require'telescope.builtin'.lsp_implementations{}<cr>
+nnoremap <silent> gd :lua require'telescope.builtin'.lsp_definitions{}<cr>
+nnoremap <silent> gt :lua require'telescope.builtin'.lsp_type_definitions{}<cr>
+
 " nnoremap <leader><Tab> <cmd>TODO file browser<cr>
 
 " NvimTree
