@@ -21,7 +21,7 @@ return require('packer').startup(function(use)
 
     -- docker lsp server
     use 'rcjsuen/dockerfile-language-server-nodejs'
-    
+
     -- completion
     use {
         "hrsh7th/nvim-cmp",

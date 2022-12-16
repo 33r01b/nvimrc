@@ -2,7 +2,7 @@
 -- https://github.com/williamboman/nvim-lsp-installer#setup
 local lsp_installer = require("nvim-lsp-installer")
 
-local servers = require 'servers' 
+local servers = require 'servers'
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -72,7 +72,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 
 -- lsp confiture
 lsp_installer.on_server_ready(function(server)
-	local opts = { 
+	local opts = {
         on_attach = on_attach,
         capabilities = capabilities,
         flags = { debounce_text_changes = 150 },
@@ -105,6 +105,14 @@ lsp_installer.on_server_ready(function(server)
 
         opts.init_options = {
             cacheClear = true
+        }
+    end
+
+    if server.name == 'sumneko_lua' then
+        opts.settings = {
+            Lua = {
+                diagnostics = { globals = { 'vim' } }
+            }
         }
     end
 
