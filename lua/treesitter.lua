@@ -1,7 +1,7 @@
-require'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup({
     ensure_installed = "all",
     refactor = {
-        highlight_definitions = { enable = true },
+        highlight_definitions = {enable = true},
     },
     highlight = {
         enable = true,
@@ -10,10 +10,10 @@ require'nvim-treesitter.configs'.setup {
         -- Using this option may slow down your editor, and you may see some duplicate highlights.
         -- Instead of true it can also be a list of languages
         additional_vim_regex_highlighting = false,
-  },
-}
+    },
+})
 
-require('nvim-tree').setup{
+require('nvim-tree').setup({
     git = {
         enable = true,
         ignore = false,
@@ -23,10 +23,10 @@ require('nvim-tree').setup{
         highlight_git = true,
         icons = {
             show = {
-             git = true,
-             folder = true,
-             file = false,
-             folder_arrow = true,
+                git = true,
+                folder = true,
+                file = false,
+                folder_arrow = true,
             }
         }
     },
@@ -34,16 +34,16 @@ require('nvim-tree').setup{
         open_file = {
             resize_window = true
         }
-    }
-}
+    },
+})
 
-require'lualine'.setup{
+require('lualine').setup({
     options = {
         section_separators = '',
         component_separators = '',
         theme = "codedark"
-    }
-}
+    },
+})
 
 -- venn.nvim: enable or disable keymappings
 function _G.Toggle_venn()
@@ -65,19 +65,16 @@ function _G.Toggle_venn()
     end
 end
 -- toggle keymappings for venn using <leader>v
-vim.api.nvim_set_keymap('n', '<leader>v', ":lua Toggle_venn()<CR>", { noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>v', ":lua Toggle_venn()<CR>", {noremap = true})
 
 -- theme
-local catppuccin = require("catppuccin")
-
--- configure it
-catppuccin.setup({
+require("catppuccin").setup({
     transparent_background = true,
     term_colors = true,
 })
 
 -- telescope
-require("telescope").setup { 
+require("telescope").setup({
     pickers = {
         live_grep = {
             additional_args = function(opts)
@@ -85,4 +82,4 @@ require("telescope").setup {
             end
         },
     },
-}
+})
