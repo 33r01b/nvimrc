@@ -29,4 +29,4 @@ hi lualine_c_normal guibg=#262626
 
 
 " run gofmt on save
-autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
+autocmd BufWritePre *.go lua vim.lsp.buf.format { async = true }
