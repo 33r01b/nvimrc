@@ -67,3 +67,6 @@ nnoremap <silent> <leader>T :FloatermNew! cd %:p:h<CR>
 
 " spell
 map <F8> :setlocal spell! spelllang=en,ru<CR>
+
+" execute and pase yanked text
+nnoremap <leader>x :r !echo '\n>>>\n' && <C-r>"<CR>
